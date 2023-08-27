@@ -1,4 +1,17 @@
 
+fetch("https://type.fit/api/quotes")
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          // console.log(data);
+          console.log(data[0].text)
+          data[0].text
+        })
+        .catch(err => {
+          console.log(err);
+        })
+
 const params = {
   name: "Bemdoo Maor",
   email: "bemdoo.maor1@gmail.com,",
