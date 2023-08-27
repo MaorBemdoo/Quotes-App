@@ -1,22 +1,23 @@
 
-fetch("https://type.fit/api/quotes")
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(data) {
-          // console.log(data);
-          console.log(data[0].text)
-          data[0].text
-        })
-        .catch(err => {
-          console.log(err);
-        })
-
 const params = {
   name: "Bemdoo Maor",
   email: "bemdoo.maor1@gmail.com,",
-  message: "Hey"
 }
+
+fetch("https://type.fit/api/quotes")
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        // console.log(data);
+        console.log(data[0].text)
+        params.message = data[0].text
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+// console.log(params.message);
 
 const serviceID = "service_u50j5ho";
 const templateID = "template_397imxp";
