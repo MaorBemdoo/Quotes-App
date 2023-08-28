@@ -1,4 +1,7 @@
 
+const serviceID = "service_u50j5ho";
+        const templateID = "template_397imxp";
+        
 fetch("https://api.quotable.io/quotes/random")
       .then(response => {
         return response.json();
@@ -14,9 +17,6 @@ fetch("https://api.quotable.io/quotes/random")
           // message: document.querySelector("main p").getInnerHTML()
           message: data[0].content
         }
-
-        const serviceID = "service_u50j5ho";
-        const templateID = "template_397imxp";
 
         // emailjs
         //   .send(serviceID, templateID, params)
