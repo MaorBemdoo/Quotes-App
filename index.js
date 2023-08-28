@@ -14,7 +14,6 @@ fetch("https://api.quotable.io/quotes/random")
           // message: document.querySelector("main p").getInnerHTML()
           message: data[0].content
         }
-        console.log(params.message);
 
         const serviceID = "service_u50j5ho";
         const templateID = "template_397imxp";
