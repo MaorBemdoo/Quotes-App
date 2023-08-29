@@ -16,7 +16,7 @@ fetch("https://api.quotable.io/quotes/random")
         
         author.textContent = data[0].author
         content.textContent = data[0].content
-
+        
         const params = {
           name: "Bemdoo Maor",
           email: "bemdoo.maor1@gmail.com,",
