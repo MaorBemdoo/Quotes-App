@@ -18,4 +18,11 @@ main{
   width: 700px;
   height: 300px;
   border-radius: 20px;
+  box-shadow: 1px 3px 5px 6px rgba(0, 0, 0, 0.25);
+}
+
+main > i{
+  transform: translate(50%, -50%);
+  font-size: 6rem;
+  cursor: pointer;
 }
