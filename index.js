@@ -14,6 +14,8 @@ fetch("https://api.quotable.io/quotes/random")
         // console.log(data);
         console.log(data[0].content)
         
+        author.textContent = data[0].author
+        content.textContent = data[0].content
 
         const params = {
           name: "Bemdoo Maor",
