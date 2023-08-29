@@ -5,6 +5,7 @@ const templateID = "template_397imxp";
 const profilePic = document.querySelector("#profilePic")
 const author = document.querySelector("#author")
 const content = document.querySelector("#content")
+const speechBtn = document.querySelector("#speechBtn")
 
 fetch("https://api.quotable.io/quotes/random")
       .then(response => {
@@ -16,7 +17,7 @@ fetch("https://api.quotable.io/quotes/random")
         
         author.textContent = data[0].author
         content.textContent = data[0].content
-        
+
         const params = {
           name: "Bemdoo Maor",
           email: "bemdoo.maor1@gmail.com,",
@@ -55,3 +56,16 @@ fetch("https://api.quotable.io/quotes/random")
             alert(err)
           })
       })
+
+const text = `${content.textContent} by ${author.textContent}`
+
+const textToSpeech = (text) => {
+  let utterance = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(utterance)
+}
+
+speechBtn.addEventListener("click", () => {
+  if(content.textContent !== ""){
+    textToSpeech(text)
+  }
+})
