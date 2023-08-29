@@ -1,6 +1,10 @@
 
 const serviceID = "service_u50j5ho";
-        const templateID = "template_397imxp";
+const templateID = "template_397imxp";
+
+const profilePic = document.querySelector("#profilePic")
+const author = document.querySelector("#author")
+const content = document.querySelector("#content")
 
 fetch("https://api.quotable.io/quotes/random")
       .then(response => {
@@ -9,8 +13,8 @@ fetch("https://api.quotable.io/quotes/random")
       .then(data => {
         // console.log(data);
         console.log(data[0].content)
-        // document.querySelector("main p").innerHTML = data[0].content
-        // params.message = data[0].content
+        
+
         const params = {
           name: "Bemdoo Maor",
           email: "bemdoo.maor1@gmail.com,",
