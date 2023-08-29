@@ -6,7 +6,8 @@
 }
 
 body{
-  position: relative;
+  display: grid;
+  place-items: center;
   background-image: url(Img/Bg.jpg);
   border: 0;
   padding: 0;
