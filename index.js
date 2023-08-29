@@ -9,7 +9,7 @@ fetch("https://api.quotable.io/quotes/random")
       .then(data => {
         // console.log(data);
         console.log(data[0].content)
-        document.querySelector("main p").innerHTML = data[0].content
+        // document.querySelector("main p").innerHTML = data[0].content
         // params.message = data[0].content
         const params = {
           name: "Bemdoo Maor",
