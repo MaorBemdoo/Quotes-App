@@ -7,28 +7,6 @@ const author = document.querySelector("#author")
 const content = document.querySelector("#content")
 const speechBtn = document.querySelector("#speechBtn")
 
-const pageNum = "1"
-const getAuthorsUrl = `https://api.quotable.io/authors?page=${pageNum}`
-
-const getAuthors = async(url) => {
-  const res = await fetch(url)
-  const jsonAuthors = await res.json()
-  jsonAuthors.result.forEach(result => {
-    console.log(result.name)
-  })
-
-}
-
-fetch("https://api.quotable.io/authors")
-  .then(res => {
-    return res.json()
-  })
-  .then(data => {
-    data.results.forEach(result => {
-      console.log(result.name);  
-    });
-  })
-
 fetch("https://api.quotable.io/quotes/random")
       .then(response => {
         return response.json();
