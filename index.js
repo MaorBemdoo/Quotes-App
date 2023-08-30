@@ -72,24 +72,8 @@ fetch("https://api.quotable.io/quotes/random")
       })
       .catch(err => {
         console.log(err);
-        document.querySelector("main p").innerHTML = err
+        content.textContent = err
         // params.message = data[0].content
-        const params = {
-          name: "Bemdoo Maor",
-          email: "bemdoo.maor1@gmail.com,",
-          // message: document.querySelector("main p").getInnerHTML()
-          message: err
-        }
-
-        emailjs
-          .send(serviceID, templateID, params)
-          .then(res => {
-            console.log(res);
-            alert("Mail sent successfully🎉🎉🥳")
-          })
-          .catch(err => {
-            alert(err)
-          })
       })
 
 // const text = `${content.textContent} by ${author.textContent}`
