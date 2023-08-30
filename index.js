@@ -73,7 +73,7 @@ fetch("https://api.quotable.io/quotes/random")
       .catch(err => {
         console.log(err);
         content.textContent = err
-        // params.message = data[0].content
+        author.textContent = err
       })
 
 // const text = `${content.textContent} by ${author.textContent}`
