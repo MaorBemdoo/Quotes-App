@@ -25,6 +25,19 @@ fetch("https://api.quotable.io/quotes/random")
           message: data[0].content
         }
 
+        const text = `${content.textContent} by ${author.textContent}`
+
+        const textToSpeech = (text) => {
+          let utterance = new SpeechSynthesisUtterance(text);
+          speechSynthesis.speak(utterance)
+        }
+
+        speechBtn.addEventListener("click", () => {
+          if(content.textContent !== ""){
+            textToSpeech(text)
+          }
+        })
+
         // emailjs
         //   .send(serviceID, templateID, params)
         //   .then(res => {
@@ -57,15 +70,15 @@ fetch("https://api.quotable.io/quotes/random")
           })
       })
 
-const text = `${content.textContent} by ${author.textContent}`
+// const text = `${content.textContent} by ${author.textContent}`
 
-const textToSpeech = (text) => {
-  let utterance = new SpeechSynthesisUtterance(text);
-  speechSynthesis.speak(utterance)
-}
+// const textToSpeech = (text) => {
+//   let utterance = new SpeechSynthesisUtterance(text);
+//   speechSynthesis.speak(utterance)
+// }
 
-speechBtn.addEventListener("click", () => {
-  if(content.textContent !== ""){
-    textToSpeech(text)
-  }
-})
+// speechBtn.addEventListener("click", () => {
+//   if(content.textContent !== ""){
+//     textToSpeech(text)
+//   }
+// })
