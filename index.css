@@ -38,6 +38,7 @@ main > div img{
 
 main > div div{
   position: relative;
+  max-width: min-content;
 }
 
 main > div div::after{
