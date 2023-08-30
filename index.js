@@ -48,15 +48,27 @@ fetch("https://api.quotable.io/quotes/random")
         }
 
         const text = `${content.textContent} by ${author.textContent}`
-
-        const textToSpeech = (text) => {
-          let utterance = new SpeechSynthesisUtterance(text);
-          speechSynthesis.speak(utterance)
+        let utterance = new SpeechSynthesisUtterance(text);
+        let fisrtTime = true
+        utterance.onend = () => {
+          speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+          fisrtTime = true
         }
-
         speechBtn.addEventListener("click", () => {
-          if(content.textContent !== ""){
-            textToSpeech(text)
+          // if(content.textContent !== ""){
+          //   textToSpeech(text)
+          // }
+          if(speechBtn.classList.contains("bi-play-circle")){
+            speechBtn.classList.replace("bi-play-circle", "bi-pause-circle")
+            if(fisrtTime){
+              speechSynthesis.speak(utterance)
+            } else{
+              speechSynthesis.resume()
+            }
+          } else{
+            speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+            speechSynthesis.pause()
+            fisrtTime = false
           }
         })
 
@@ -74,6 +86,31 @@ fetch("https://api.quotable.io/quotes/random")
         console.log(err);
         content.textContent = err
         author.textContent = err
+
+        const text = `${content.textContent} by ${author.textContent}`
+        let utterance = new SpeechSynthesisUtterance(text);
+        let fisrtTime = true
+        utterance.onend = () => {
+          speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+          fisrtTime = true
+        }
+        speechBtn.addEventListener("click", () => {
+          // if(content.textContent !== ""){
+          //   textToSpeech(text)
+          // }
+          if(speechBtn.classList.contains("bi-play-circle")){
+            speechBtn.classList.replace("bi-play-circle", "bi-pause-circle")
+            if(fisrtTime){
+              speechSynthesis.speak(utterance)
+            } else{
+              speechSynthesis.resume()
+            }
+          } else{
+            speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+            speechSynthesis.pause()
+            fisrtTime = false
+          }
+        })
       })
 
 // const text = `${content.textContent} by ${author.textContent}`
