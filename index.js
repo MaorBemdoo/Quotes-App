@@ -6,6 +6,7 @@ const profilePic = document.querySelector("#profilePic")
 const author = document.querySelector("#author")
 const content = document.querySelector("#content")
 const speechBtn = document.querySelector("#speechBtn")
+const generateBtn = document.querySelector("#generateBtn")
 
 // const totalPages = 41;  // Set the total number of pages
 
@@ -73,7 +74,8 @@ const speechBtn = document.querySelector("#speechBtn")
 //     console.error("An error occurred:", error);
 //   });
 
-fetch("https://api.quotable.io/quotes/random")
+generateBtn.addEventListener("click", (e) => {
+  fetch("https://api.quotable.io/quotes/random")
       .then(response => {
         return response.json();
       })
@@ -156,6 +158,7 @@ fetch("https://api.quotable.io/quotes/random")
           }
         })
       })
+})
 
 // const text = `${content.textContent} by ${author.textContent}`
 
