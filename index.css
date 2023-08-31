@@ -16,6 +16,7 @@ body{
 }
 
 main{
+  position: relative;
   width: 700px;
   height: 300px;
   border-radius: 20px;
@@ -77,6 +78,16 @@ main > p::after{
   bottom: -20px;
   right: -20px;
   transform: translate(50%, 50%);
+}
+
+main button{
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border: none;
+  border-radius: 8px;
+  color: white;
 }
 
 footer p{
