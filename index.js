@@ -79,6 +79,30 @@ if(getQuotesStore !== null){
   author.textContent = getQuotesStore.author
   content.textContent = getQuotesStore.content
 }
+const text = `${content.textContent} by ${author.textContent}`
+let utterance = new SpeechSynthesisUtterance(text);
+let fisrtTime = true
+utterance.onend = () => {
+  speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+  fisrtTime = true
+}
+speechBtn.addEventListener("click", () => {
+  // if(content.textContent !== ""){
+  //   textToSpeech(text)
+  // }
+  if(speechBtn.classList.contains("bi-play-circle")){
+    speechBtn.classList.replace("bi-play-circle", "bi-pause-circle")
+    if(fisrtTime){
+      speechSynthesis.speak(utterance)
+    } else{
+      speechSynthesis.resume()
+    }
+  } else{
+    speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+    speechSynthesis.pause()
+    fisrtTime = false
+  }
+})
 
 generateBtn.addEventListener("click", (e) => {
   fetch("https://api.quotable.io/quotes/random")
