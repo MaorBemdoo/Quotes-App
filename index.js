@@ -74,6 +74,12 @@ const generateBtn = document.querySelector("#generateBtn")
 //     console.error("An error occurred:", error);
 //   });
 
+const getQuotesStore = JSON.parse(sessionStorage.getItem("quotesStore"))
+if(getQuotesStore !== null){
+  author.textContent = getQuotesStore.author
+  content.textContent = getQuotesStore.content
+}
+
 generateBtn.addEventListener("click", (e) => {
   fetch("https://api.quotable.io/quotes/random")
       .then(response => {
@@ -90,7 +96,7 @@ generateBtn.addEventListener("click", (e) => {
           author: data[0].author,
           content: data[0].content
         }
-        localStorage.setItem("quotesStore", JSON.stringify(objQuotes))
+        sessionStorage.setItem("quotesStore", JSON.stringify(objQuotes))
 
         const params = {
           name: "Bemdoo Maor",
