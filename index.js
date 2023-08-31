@@ -86,6 +86,12 @@ generateBtn.addEventListener("click", (e) => {
         author.textContent = data[0].author
         content.textContent = data[0].content
 
+        const objQuotes = {
+          author: data[0].author,
+          content: data[0].content
+        }
+        localStorage.setItem("quotesStore", JSON.stringify(objQuotes))
+
         const params = {
           name: "Bemdoo Maor",
           email: "bemdoo.maor1@gmail.com,",
