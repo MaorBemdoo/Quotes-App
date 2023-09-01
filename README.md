@@ -47,7 +47,7 @@ Github: **[MaorBemdoo](https://github.com/MaorBemdoo)**
 
 ## Contributing
 
-Future Pull request and issues are welcome
+Future Pull request and issues are welcome, by the way there is an open [issue](https://github.com/MaorBemdoo/Quotes-App/issues/11)
 
 ## Support
 
