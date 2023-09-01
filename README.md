@@ -7,6 +7,7 @@ This is a Quotes App specially made for **Aviation Hack 2023** which generates p
 - It generates popular quotes
 - It saves previous quotes in session Storage
 - It converts quotes to speech
+- It also utilizes my custom [api](authors.json)
 
 ## Technologies, Languages and Tools Used
 
@@ -34,7 +35,7 @@ git clone <repo>
 
 ## Demo
 
-![Screenshots]()
+![Screenshots](Img/Screenshot.png)
 <br>
 **[Live Demo](https://bemdoom-aviation-hack-2023.vercel.app)**
 
