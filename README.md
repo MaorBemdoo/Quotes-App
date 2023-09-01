@@ -43,7 +43,7 @@ git clone <repo>
 
 ![Screenshots](Img/Screenshot.png)<br>
 
-**[Live Demo](https://bemdoom-aviation-hack-2023.vercel.app)**
+**[Live Demo](https://bemdoom-quotes-app.vercel.app)**
 
 ## 👨‍💻Author
 
