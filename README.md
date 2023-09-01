@@ -8,6 +8,7 @@ This is a Quotes App specially made for **Aviation Hack 2023** which generates p
 - It saves previous quotes in session Storage
 - It converts quotes to speech
 - It also utilizes my custom [api](authors.json)
+- It uses debounce when generating Quotes for 2secs
 
 ## Technologies, Languages and Tools Used
 
