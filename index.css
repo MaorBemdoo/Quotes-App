@@ -90,6 +90,12 @@ main button{
   color: white;
 }
 
+main button:hover,
+main button:focus{
+  background-color: rgb(64, 190, 231) !important;
+  box-shadow: 1px 3px 5px 6px rgba(0, 0, 0, 0.25);
+}
+
 footer p{
   text-align: center;
   font-size: 2rem;
