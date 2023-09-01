@@ -37,8 +37,12 @@ git clone <repo>
 
 ## Demo
 
-![Screenshots](Img/Screenshot.png)
-<br>
+<video auotplay loop muted>
+  <source src="Img/screen-record.mp4">
+</video><br>
+
+![Screenshots](Img/Screenshot.png)<br>
+
 **[Live Demo](https://bemdoom-aviation-hack-2023.vercel.app)**
 
 ## 👨‍💻Author
