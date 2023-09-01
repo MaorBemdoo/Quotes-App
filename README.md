@@ -37,7 +37,7 @@ git clone <repo>
 
 ## Demo
 
-<video auotplay loop muted>
+<video autoplay loop muted>
   <source src="Img/screen-record.mp4">
 </video><br>
 
