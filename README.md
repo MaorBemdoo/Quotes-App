@@ -1,6 +1,6 @@
 # Quotes App
 
-This is a Quotes App specially made for **Aviation Hack 2023** which generates popular quotes. It utilizes the [api.quotable.io](api.quotable.io) api
+This is a Quotes App specially made for **Aviation Hack 2023** which generates popular quotes. It utilizes the [api.quotable.io](https://api.quotable.io) api
 
 ## What it does
 
