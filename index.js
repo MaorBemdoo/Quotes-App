@@ -106,7 +106,19 @@ speechBtn.addEventListener("click", () => {
   }
 })
 
-generateBtn.addEventListener("click", (e) => {
+const debounce = (fn, delay) => {
+  let id;
+  console.log(`id at immediate log: ${id}`)
+  return(...args) => {
+    console.log(`previous id: ${id}`);
+    if(id) clearTimeout(id)
+    id = setTimeout(() => {
+      fn(...args)
+    }, delay)
+  }
+}
+
+const fetchQuote = () => {
   fetch("https://api.quotable.io/quotes/random")
       .then(response => {
         return response.json();
@@ -228,7 +240,9 @@ generateBtn.addEventListener("click", (e) => {
           }
         })
       })
-})
+}
+
+generateBtn.addEventListener("click", debounce(fetchQuote, 2000))
 
 // const text = `${content.textContent} by ${author.textContent}`
 
