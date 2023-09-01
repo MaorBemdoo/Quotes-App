@@ -7,6 +7,7 @@ const author = document.querySelector("#author")
 const content = document.querySelector("#content")
 const speechBtn = document.querySelector("#speechBtn")
 const generateBtn = document.querySelector("#generateBtn")
+const unknownPP = "https://icon-library.com/images/unknown-person-icon/unknown-person-icon-4.jpg"
 
 // const totalPages = 41;  // Set the total number of pages
 
@@ -115,6 +116,32 @@ generateBtn.addEventListener("click", (e) => {
         
         author.textContent = data[0].author
         content.textContent = data[0].content
+        fetch("authors.json")
+            .then(response => {
+              return response.json()
+            })
+            .then(author => {
+              Object.keys(author).forEach(authorData => {
+                // console.log(authorData);
+                if(authorData == data[0].author){
+                  console.log(author[authorData]);
+                  if(author[authorData].length == 1){
+                    if(author[authorData][0].trim() != "") profilePic.src = author[authorData][0];
+                    else profilePic.src = unknownPP;
+                  }
+                  else if(author[authorData].length >= 2){
+                    const randomIdx = Math.floor(Math.random()*author[authorData].length)
+                    console.log(randomIdx);
+                    profilePic.src = author[authorData][randomIdx]
+                  }
+                }
+              })
+              profilePic.alt = data[0].author
+            })
+            .catch(err => {
+              console.log(err);
+              profilePic.src = unknownPP
+            })
 
         const objQuotes = {
           author: data[0].author,
