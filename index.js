@@ -150,6 +150,32 @@ const fetchQuote = () => {
                 }
               })
               profilePic.alt = data[0].author
+
+              const text = `${content.textContent} by ${author.textContent}`
+              let utterance = new SpeechSynthesisUtterance(text);
+              let fisrtTime = true
+              utterance.onend = () => {
+                speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+                fisrtTime = true
+              }
+              speechBtn.addEventListener("click", () => {
+                // if(content.textContent !== ""){
+                //   textToSpeech(text)
+                // }
+                if(speechBtn.classList.contains("bi-play-circle")){
+                  speechBtn.classList.replace("bi-play-circle", "bi-pause-circle")
+                  if(fisrtTime){
+                    speechSynthesis.speak(utterance)
+                  } else{
+                    speechSynthesis.resume()
+                  }
+                } else{
+                  speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+                  speechSynthesis.pause()
+                  fisrtTime = false
+                }
+              })
+
               const objQuotes = {
                 author: data[0].author,
                 content: data[0].content,
@@ -160,6 +186,32 @@ const fetchQuote = () => {
             .catch(err => {
               console.log(err);
               profilePic.src = unknownPP
+
+              const text = `${content.textContent} by ${author.textContent}`
+              let utterance = new SpeechSynthesisUtterance(text);
+              let fisrtTime = true
+              utterance.onend = () => {
+                speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+                fisrtTime = true
+              }
+              speechBtn.addEventListener("click", () => {
+                // if(content.textContent !== ""){
+                //   textToSpeech(text)
+                // }
+                if(speechBtn.classList.contains("bi-play-circle")){
+                  speechBtn.classList.replace("bi-play-circle", "bi-pause-circle")
+                  if(fisrtTime){
+                    speechSynthesis.speak(utterance)
+                  } else{
+                    speechSynthesis.resume()
+                  }
+                } else{
+                  speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
+                  speechSynthesis.pause()
+                  fisrtTime = false
+                }
+              })
+
               const objQuotes = {
                 author: data[0].author,
                 content: data[0].content,
@@ -174,31 +226,6 @@ const fetchQuote = () => {
           // message: document.querySelector("main p").getInnerHTML()
           message: data[0].content
         }
-
-        const text = `${content.textContent} by ${author.textContent}`
-        let utterance = new SpeechSynthesisUtterance(text);
-        let fisrtTime = true
-        utterance.onend = () => {
-          speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
-          fisrtTime = true
-        }
-        speechBtn.addEventListener("click", () => {
-          // if(content.textContent !== ""){
-          //   textToSpeech(text)
-          // }
-          if(speechBtn.classList.contains("bi-play-circle")){
-            speechBtn.classList.replace("bi-play-circle", "bi-pause-circle")
-            if(fisrtTime){
-              speechSynthesis.speak(utterance)
-            } else{
-              speechSynthesis.resume()
-            }
-          } else{
-            speechBtn.classList.replace("bi-pause-circle", "bi-play-circle")
-            speechSynthesis.pause()
-            fisrtTime = false
-          }
-        })
 
         // emailjs
         //   .send(serviceID, templateID, params)
