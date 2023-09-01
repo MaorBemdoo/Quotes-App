@@ -20,11 +20,12 @@ This is a Quotes App specially made for **Aviation Hack 2023** which generates p
 
 I used the Tech Stack above to keep things simple and fix bugs easily
 
-## Challenges I faced
+## Challenges: I faced, I'm aware of and hope to fix
 
 - First of all this whole App was not what I planned to build for the Hackathon
-- I wanted to make an app that send motivational quotes every day at a particular time but I didn't have the resources
+- I wanted to make an app that sends motivational quotes every day at a particular time but I didn't have the resources and skills
 - The App is not very responsive
+- My custom [api](authors.json) is not complete
 
 ## How to install and Run the Project
 
@@ -43,6 +44,14 @@ git clone <repo>
 ## 👨‍💻Author
 
 Github: **[MaorBemdoo](https://github.com/MaorBemdoo)**
+
+## Contributing
+
+Future Pull request and issues are welcome
+
+## Support
+
+Give this repo a ⭐ if you liked it
 
 ## License
 
