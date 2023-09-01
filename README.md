@@ -44,6 +44,14 @@ git clone <repo>
 
 Github: **[MaorBemdoo](https://github.com/MaorBemdoo)**
 
+## Contributing
+
+Future Pull request and issues are welcome
+
+## Support
+
+Give this repo a ⭐ if you liked it
+
 ## License
 
 Thsi Project is **[MIT](LICENSE)** Licensed
