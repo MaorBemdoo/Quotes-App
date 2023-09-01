@@ -1,6 +1,6 @@
 # Quotes App
 
-This is a Quotes App specially made for **Aviation Hack 2023** which generates popular quotes. It utilizes the [api.quotable.io](https://api.quotable.io) api
+This is a Quotes App which generates popular quotes to keep you motivated. It utilizes the [api.quotable.io](https://api.quotable.io) api and my custom [authors.json](authors.json) api
 
 ## What it does
 
@@ -37,8 +37,12 @@ git clone <repo>
 
 ## Demo
 
-![Screenshots](Img/Screenshot.png)
-<br>
+<video autoplay loop muted>
+  <source src="Img/screen-record.mp4">
+</video><br>
+
+![Screenshots](Img/Screenshot.png)<br>
+
 **[Live Demo](https://bemdoom-aviation-hack-2023.vercel.app)**
 
 ## 👨‍💻Author
@@ -47,7 +51,7 @@ Github: **[MaorBemdoo](https://github.com/MaorBemdoo)**
 
 ## Contributing
 
-Future Pull request and issues are welcome
+Future Pull request and issues are welcome, by the way there is an open [issue](https://github.com/MaorBemdoo/Quotes-App/issues/11)
 
 ## Support
 
