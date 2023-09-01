@@ -79,6 +79,7 @@ const getQuotesStore = JSON.parse(sessionStorage.getItem("quotesStore"))
 if(getQuotesStore !== null){
   author.textContent = getQuotesStore.author
   content.textContent = getQuotesStore.content
+  profilePic.src = getQuotesStore.image
 }
 const text = `${content.textContent} by ${author.textContent}`
 let utterance = new SpeechSynthesisUtterance(text);
@@ -137,17 +138,23 @@ generateBtn.addEventListener("click", (e) => {
                 }
               })
               profilePic.alt = data[0].author
+              const objQuotes = {
+                author: data[0].author,
+                content: data[0].content,
+                image: profilePic.getAttribute("src")
+              }
+              sessionStorage.setItem("quotesStore", JSON.stringify(objQuotes))
             })
             .catch(err => {
               console.log(err);
               profilePic.src = unknownPP
+              const objQuotes = {
+                author: data[0].author,
+                content: data[0].content,
+                image: profilePic.getAttribute("src")
+              }
+              sessionStorage.setItem("quotesStore", JSON.stringify(objQuotes))
             })
-
-        const objQuotes = {
-          author: data[0].author,
-          content: data[0].content
-        }
-        sessionStorage.setItem("quotesStore", JSON.stringify(objQuotes))
 
         const params = {
           name: "Bemdoo Maor",
