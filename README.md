@@ -59,4 +59,4 @@ Give this repo a ⭐ if you liked it
 
 ## License
 
-Thsi Project is **[MIT](LICENSE)** Licensed
+This Project is **[MIT](LICENSE)** Licensed
